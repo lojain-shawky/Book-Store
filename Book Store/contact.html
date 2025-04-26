@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Store</title>
+  <link rel="stylesheet" href="BS.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="navbar-left">
+      <div class="logo">
+        <img src="book store website/images/logo.png" alt="logo">
+      </div> 
+      <ul class="nav-links" id="nav-links">
+        <li><a href="BS.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="navbar-right">
+      <div class="shopping-cart">
+        <i class="ri-shopping-bag-line"></i>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button type="submit"><i class="ri-search-line"></i></button>
+    </div>
+    <div class="menu-icon" id="menu-icon">
+        <i class="ri-menu-line"></i>
+    </div>
+    </div>
+  </nav>
+
+  <div class="contact-section">
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form id="contactForm" onsubmit="return validateForm()">
+            <input type="text" id="name" placeholder="Name" required>
+            <span class="error-message" id="nameError">Please enter your name.</span>
+
+            <input type="email" id="email" placeholder="Email" required>
+            <span class="error-message" id="emailError">Please enter a valid email.</span>
+
+            <input type="text" id="phone" placeholder="Phone Number" required pattern="\d{10,15}">
+            <span class="error-message" id="phoneError">Please enter a valid phone number.</span>
+
+            <textarea id="message" rows="4" placeholder="Message" required></textarea>
+            <span class="error-message" id="messageError">Please enter a message.</span>
+
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+    <div class="contact-image">
+        <img src="book store website/images/content.jpg">
+    </div>
+</div>
+
+<footer class="footer" id="contact-section">
+  <div class="footer-content">
+      <div class="footer-col">
+          <h2>Book Haven</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+          <p class="copyright">Copyright © 2024 Book Haven. All rights reserved.</p>
+      </div>
+      <div class="footer-col">
+          <h3>Contact  US</h3>
+          <p>555 arabica Spring Rd</p>
+          <p>Email: <a class="link">coffee@company.com</p>
+      </div>
+      <div class="footer-col">
+          <h3>Subscribe to Newsletter</h3>
+          <form class="subscribe-form">
+              <input type="email" placeholder="Your e-mail address" required>
+              <a class="btn subscribe-btn">Subscribe</a>
+          </form>
+          <p>Sign up with your email addreass to receive news and updates</p>
+      </div>
+  </div>
+</footer>
+
+<script src="BS.js"></script>
+</body>
+</html>
