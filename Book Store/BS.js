@@ -32,49 +32,33 @@ const images = [
       currentIndex = (currentIndex - 1 + images.length) % images.length;
       updateSlider();
   });
+
+  document.querySelector("#contactForm").addEventListener("submit", async function(e) {e.preventDefault();
+
+  const name = document.querySelector("#name").value;
+  const email = document.querySelector("#email").value;
+  const phone = document.querySelector("#phone").value;
+  const message = document.querySelector("#message").value;
+
+  const response = await fetch("http://localhost:3000/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, email, phone, message })
+  });
+
+  const result = await response.json();
+  alert(result.message);
+});
   
-  function validateForm() {
-    let isValid = true;
+document.querySelector("#subscribe-btn").addEventListener("click", async function() {
+  const email = document.querySelector("#newsletter-email").value;
 
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const phone = document.getElementById("phone");
-    const message = document.getElementById("message");
+  const response = await fetch("http://localhost:3000/subscribe", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email })
+  });
 
-    const nameError = document.getElementById("nameError");
-    const emailError = document.getElementById("emailError");
-    const phoneError = document.getElementById("phoneError");
-    const messageError = document.getElementById("messageError");
-
-    if (name.value.trim() === "") {
-        nameError.style.display = "block";
-        isValid = false;
-    } else {
-        nameError.style.display = "none";
-    }
-
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,6}$/;
-    if (!emailPattern.test(email.value)) {
-        emailError.style.display = "block";
-        isValid = false;
-    } else {
-        emailError.style.display = "none";
-    }
-
-    const phonePattern = /^\d{10,15}$/;
-    if (!phonePattern.test(phone.value)) {
-        phoneError.style.display = "block";
-        isValid = false;
-    } else {
-        phoneError.style.display = "none";
-    }
-
-    if (message.value.trim() === "") {
-        messageError.style.display = "block";
-        isValid = false;
-    } else {
-        messageError.style.display = "none";
-    }
-
-    return isValid;
-}
+  const result = await response.json();
+  alert(result.message);
+});
