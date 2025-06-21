@@ -35,7 +35,7 @@
   <div class="contact-section">
     <div class="contact-form">
         <h2>Contact Us</h2>
-        <form id="contactForm" onsubmit="return validateForm()">
+        <form id="contactForm">
             <input type="text" id="name" placeholder="Name" required>
             <span class="error-message" id="nameError">Please enter your name.</span>
 
@@ -67,13 +67,13 @@
       <div class="footer-col">
           <h3>Contact  US</h3>
           <p>555 arabica Spring Rd</p>
-          <p>Email: <a class="link">coffee@company.com</p>
+          <p>Email: <a class="link">coffee@company.com </a></p>
       </div>
       <div class="footer-col">
           <h3>Subscribe to Newsletter</h3>
           <form class="subscribe-form">
-              <input type="email" placeholder="Your e-mail address" required>
-              <a class="btn subscribe-btn">Subscribe</a>
+              <input type="email" placeholder="Your e-mail address" required id="newsletter-email">
+              <button type="button" id="subscribe-btn" class="btn subscribe-btn">Subscribe</button>
           </form>
           <p>Sign up with your email addreass to receive news and updates</p>
       </div>
